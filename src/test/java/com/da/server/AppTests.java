@@ -1,10 +1,10 @@
-package com.da.server.demo;
+package com.da.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DaDiscoveryApplicationTests {
+class AppTests {
 
     @Test
     void contextLoads() {

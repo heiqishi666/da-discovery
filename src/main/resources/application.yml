@@ -1,0 +1,29 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: demo-discover
+  profiles:
+    active: dev
+  cloud:
+    inetutils:
+      preferred-networks: 127.0.0.1 #忽略指定网卡配置
+    client:
+      ip-address: 127.0.0.1
+
+eureka:
+  server:
+    waitTimeInMsWhenSyncEmpty: 0 #服务器节点的状态信息被更新的时间间隔，单位为毫秒，默认为30 * 1000
+    peer-node-read-timeout-ms: 3000  #集群之间读取超时时间 1s=1000ms
+    enable-self-preservation: true #开启自我保护
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    registerWithEureka: true # 表示是否注册自身到eureka服务器
+    fetchRegistry: false # 是否从eureka上获取注册信息
+    healthcheck:
+      enabled: true #开启健康检查 心跳检测
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
