@@ -8,22 +8,22 @@ spring:
     active: dev
   cloud:
     inetutils:
-      preferred-networks: 127.0.0.1 #ºöÂÔÖ¸¶¨Íø¿¨ÅäÖÃ
+      preferred-networks: 127.0.0.1 #å¿½ç•¥æŒ‡å®šç½‘å¡é…ç½®
     client:
       ip-address: 127.0.0.1
 
 eureka:
   server:
-    waitTimeInMsWhenSyncEmpty: 0 #·şÎñÆ÷½ÚµãµÄ×´Ì¬ĞÅÏ¢±»¸üĞÂµÄÊ±¼ä¼ä¸ô£¬µ¥Î»ÎªºÁÃë£¬Ä¬ÈÏÎª30 * 1000
-    peer-node-read-timeout-ms: 3000  #¼¯ÈºÖ®¼ä¶ÁÈ¡³¬Ê±Ê±¼ä 1s=1000ms
-    enable-self-preservation: true #¿ªÆô×ÔÎÒ±£»¤
+    waitTimeInMsWhenSyncEmpty: 0 #æœåŠ¡å™¨èŠ‚ç‚¹çš„çŠ¶æ€ä¿¡æ¯è¢«æ›´æ–°çš„æ—¶é—´é—´éš”ï¼Œå•ä½ä¸ºæ¯«ç§’ï¼Œé»˜è®¤ä¸º30 * 1000
+    peer-node-read-timeout-ms: 3000  #é›†ç¾¤ä¹‹é—´è¯»å–è¶…æ—¶æ—¶é—´ 1s=1000ms
+    enable-self-preservation: true #å¼€å¯è‡ªæˆ‘ä¿æŠ¤
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
-    registerWithEureka: true # ±íÊ¾ÊÇ·ñ×¢²á×ÔÉíµ½eureka·şÎñÆ÷
-    fetchRegistry: false # ÊÇ·ñ´ÓeurekaÉÏ»ñÈ¡×¢²áĞÅÏ¢
+    registerWithEureka: true # è¡¨ç¤ºæ˜¯å¦æ³¨å†Œè‡ªèº«åˆ°eurekaæœåŠ¡å™¨
+    fetchRegistry: false # æ˜¯å¦ä»eurekaä¸Šè·å–æ³¨å†Œä¿¡æ¯
     healthcheck:
-      enabled: true #¿ªÆô½¡¿µ¼ì²é ĞÄÌø¼ì²â
+      enabled: true #å¼€å¯å¥åº·æ£€æŸ¥ å¿ƒè·³æ£€æµ‹
     serviceUrl:
       defaultZone: http://127.0.0.1:8761/eureka/
