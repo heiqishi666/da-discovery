@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: demo-discover
+    name: da-discover
   profiles:
     active: dev
   cloud:
